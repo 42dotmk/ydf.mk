@@ -30,7 +30,7 @@ export const localeNames: Record<Locale, string> = {
   en: "🇬🇧 English",
   mk: "🇲🇰 Македонски",
   sq: "🇦🇱 Shqip",
-  sr: "🇷🇸 Српски",
+  sr: "🇷🇸 Srpski",
   fr: "🇫🇷 Français",
   de: "🇩🇪 Deutsch",
   it: "🇮🇹 Italiano",

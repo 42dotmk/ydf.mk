@@ -127,11 +127,6 @@ export default function AboutPage() {
                   image: "/images/team/elena.jpg",
                 },
                 {
-                  nameKey: "team_stanisa_name",
-                  roleKey: "team_stanisa_role",
-                  image: "/images/team/stanisha.jpg",
-                },
-                {
                   nameKey: "team_bojana_name",
                   roleKey: "team_bojana_role",
                   image: "/images/team/bojana.jpg",
@@ -139,7 +134,7 @@ export default function AboutPage() {
                 {
                   nameKey: "team_mence_name",
                   roleKey: "team_mence_role",
-                  image: "/images/team/menche.jpg",
+                  image: "/images/team/mence.jpg",
                 },
                 {
                   nameKey: "team_teodora_name",
@@ -147,14 +142,19 @@ export default function AboutPage() {
                   image: "/images/team/teodora.jpg",
                 },
                 {
-                  nameKey: "team_klimentina_name",
-                  roleKey: "team_klimentina_role",
-                  image: "/images/team/klimentina.jpg",
+                  nameKey: "team_stanisa_name",
+                  roleKey: "team_stanisa_role",
+                  image: "/images/team/stanisha.jpg",
                 },
                 {
                   nameKey: "team_liljana_name",
                   roleKey: "team_liljana_role",
-                  image: "/images/team/liljana.jpg",
+                  image: "/images/team/lili.jpg",
+                },
+                {
+                  nameKey: "team_klimentina_name",
+                  roleKey: "team_klimentina_role",
+                  image: "/images/team/klimentina.jpg",
                 },
               ].map((member, i) => {
                 const name = t(member.nameKey);
