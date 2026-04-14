@@ -75,6 +75,14 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
+                    href="/blog"
+                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    {t("nav_blog")}
+                  </Link>
+                </li>
+                <li>
+                  <Link
                     href="/pay-a-semester"
                     className="text-sm text-muted-foreground transition-colors hover:text-foreground"
                   >
