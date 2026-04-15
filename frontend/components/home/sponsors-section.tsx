@@ -3,7 +3,7 @@
 import { useLocale } from "@/lib/locale-context";
 import { FadeIn } from "@/components/animate";
 
-const sponsors = [
+const sponsors: { name: string; src: string; url: string; darkSrc?: string }[] = [
   { name: "Doniraj Kompjuter", src: "/images/sponsors/doniraj_kompjuter.jpg", url: "https://donirajkompjuter.mk" },
   { name: "Ecrowd", src: "/images/sponsors/ecrowd.png", url: "https://ecrowd.mk" },
   { name: "Kanal 77", src: "/images/sponsors/kanal77.jpg", url: "https://kanal77.mk" },
