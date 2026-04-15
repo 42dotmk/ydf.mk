@@ -5,6 +5,8 @@ import { BlogArticleContent } from "@/components/blog/blog-article-content";
 import { BlogBreadcrumb } from "@/components/blog/blog-breadcrumb";
 import { getBlogPostBySlug } from "@/lib/blog/repository";
 
+export const dynamic = "force-dynamic";
+
 interface BlogArticlePageProps {
   params: Promise<{
     slug: string;

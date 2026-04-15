@@ -2,6 +2,8 @@ import { getAllBlogPosts, getFeaturedBlogPosts } from "@/lib/blog/repository";
 import { PageHeader } from "@/components/page-header";
 import { BlogPageContent } from "@/components/blog/blog-page-content";
 
+export const dynamic = "force-dynamic";
+
 export default async function BlogPage() {
   const [allPosts, featuredPosts] = await Promise.all([
     getAllBlogPosts(),
