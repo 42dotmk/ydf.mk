@@ -1,0 +1,11 @@
+node_modules
+.cache
+.tmp
+build
+dist
+.strapi
+.strapi-updater.json
+types/generated
+.env
+.DS_Store
+public/uploads
