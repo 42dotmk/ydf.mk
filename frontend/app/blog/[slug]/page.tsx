@@ -3,7 +3,7 @@ import { CalendarDays, Clock3, User } from "lucide-react";
 import { FadeIn } from "@/components/animate";
 import { BlogArticleContent } from "@/components/blog/blog-article-content";
 import { BlogBreadcrumb } from "@/components/blog/blog-breadcrumb";
-import { getBlogPostBySlug, getBlogStaticSlugs } from "@/lib/blog/repository";
+import { getBlogPostBySlug } from "@/lib/blog/repository";
 
 interface BlogArticlePageProps {
   params: Promise<{
@@ -19,15 +19,11 @@ function formatDate(date: string): string {
   }).format(new Date(date));
 }
 
-export function generateStaticParams() {
-  return getBlogStaticSlugs();
-}
-
 export default async function BlogArticlePage({
   params,
 }: BlogArticlePageProps) {
   const { slug } = await params;
-  const post = getBlogPostBySlug(slug);
+  const post = await getBlogPostBySlug(slug);
 
   if (!post) {
     notFound();

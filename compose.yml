@@ -9,13 +9,13 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      test: [ "CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}" ]
       interval: 10s
       timeout: 5s
       retries: 5
 
   cms:
-    image: ghcr.io/42dotmk/ydf.mk/cms:${IMAGE_TAG:-latest}
+    image: ghcr.io/42dotmk/ydf.mk/cms:${IMAGE_TAG:-main}
     restart: unless-stopped
     depends_on:
       postgres:
@@ -33,14 +33,21 @@ services:
       JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in .env}
       TRANSFER_TOKEN_SALT: ${TRANSFER_TOKEN_SALT:?Set TRANSFER_TOKEN_SALT in .env}
       NODE_ENV: production
+    volumes:
+      - ./public:/app/public
     ports:
       - "1337:1337"
 
   frontend:
-    image: ghcr.io/42dotmk/ydf.mk/frontend:${IMAGE_TAG:-latest}
+    image: ghcr.io/42dotmk/ydf.mk/frontend:${IMAGE_TAG:-main}
     restart: unless-stopped
+    depends_on:
+      - cms
+    environment:
+      API_URL: http://cms:1337
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-http://localhost:1337}
     ports:
-      - "80:80"
+      - "80:3000"
 
 volumes:
   pgdata:
