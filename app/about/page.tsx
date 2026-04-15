@@ -11,6 +11,8 @@ import {
   Users,
   Shield,
   Megaphone,
+  Download,
+  ExternalLink,
   ArrowRight,
 } from "lucide-react";
 
@@ -25,6 +27,21 @@ const valueColors = [
 
 export default function AboutPage() {
   const { t } = useLocale();
+
+  const yearlyReports = [
+    {
+      year: "2023",
+      file: "/yearly_reports/Наративен и финансиски извештај за 2023.pdf",
+    },
+    {
+      year: "2024",
+      file: "/yearly_reports/Наративен и финансиски извештај за 2024.pdf",
+    },
+    {
+      year: "2025",
+      file: "/yearly_reports/Наративен и финансиски извештај за 2025.pdf",
+    },
+  ];
 
   const values = [
     t("about_value_1"),
@@ -125,36 +142,43 @@ export default function AboutPage() {
                   nameKey: "team_elena_name",
                   roleKey: "team_elena_role",
                   image: "/images/team/elena.jpg",
+                  email: "ellena.bozhinovska@gmail.com",
                 },
                 {
                   nameKey: "team_bojana_name",
                   roleKey: "team_bojana_role",
                   image: "/images/team/bojana.jpg",
+                  email: "bojana.ydf@gmail.com",
                 },
                 {
                   nameKey: "team_mence_name",
                   roleKey: "team_mence_role",
                   image: "/images/team/mence.jpg",
+                  email: "mence.ydf@outlook.com",
                 },
                 {
                   nameKey: "team_teodora_name",
                   roleKey: "team_teodora_role",
                   image: "/images/team/teodora.jpg",
+                  email: "teodoraydf@gmail.com",
                 },
                 {
                   nameKey: "team_stanisa_name",
                   roleKey: "team_stanisa_role",
                   image: "/images/team/stanisha.jpg",
+                  email: "stanisa.ydf@gmail.com",
                 },
                 {
                   nameKey: "team_liljana_name",
                   roleKey: "team_liljana_role",
                   image: "/images/team/lili.jpg",
+                  email: "liljanaydf@gmail.com",
                 },
                 {
                   nameKey: "team_klimentina_name",
                   roleKey: "team_klimentina_role",
                   image: "/images/team/klimentina.jpg",
+                  email: "klimentina.ydf@gmail.com",
                 },
               ].map((member, i) => {
                 const name = t(member.nameKey);
@@ -176,11 +200,97 @@ export default function AboutPage() {
                       <span className="text-xs text-muted-foreground text-center">
                         {t(member.roleKey)}
                       </span>
+                      <a
+                        href={`mailto:${member.email}`}
+                        className="text-xs font-medium text-primary transition-colors hover:text-primary/80"
+                      >
+                        {member.email}
+                      </a>
                     </div>
                   </FadeIn>
                 );
               })}
             </div>
+          </div>
+        </section>
+
+        {/* Yearly reports */}
+        <section className="mt-16">
+          <FadeIn>
+            <div className="max-w-3xl">
+              <h2 className="text-2xl font-bold text-foreground">
+                {t("about_reports_title")}
+              </h2>
+              <p className="mt-3 text-muted-foreground">
+                {t("about_reports_desc")}
+              </p>
+            </div>
+          </FadeIn>
+          <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {yearlyReports.map((report, i) => {
+              const reportUrl = encodeURI(report.file);
+
+              return (
+                <FadeIn key={report.year} delay={i * 100} direction="up">
+                  <article className="flex h-full flex-col overflow-hidden rounded-2xl border bg-card transition-all hover:shadow-md">
+                    <div className="border-b bg-muted/30 p-5">
+                      <p className="text-sm font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                        {report.year}
+                      </p>
+                      <h3 className="mt-2 text-xl font-bold text-card-foreground">
+                        {t("about_report_title")}
+                      </h3>
+                    </div>
+                    <div className="border-b bg-background p-4">
+                      <div className="aspect-[3/4] overflow-hidden rounded-xl border bg-muted/20">
+                        <object
+                          data={reportUrl}
+                          type="application/pdf"
+                          className="h-full w-full"
+                        >
+                          <div className="flex h-full flex-col items-center justify-center gap-3 p-6 text-center">
+                            <p className="text-sm text-muted-foreground">
+                              {t("about_report_preview_fallback")}
+                            </p>
+                            <a
+                              href={reportUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                            >
+                              {t("about_report_open")}
+                              <ExternalLink
+                                className="h-4 w-4"
+                                aria-hidden="true"
+                              />
+                            </a>
+                          </div>
+                        </object>
+                      </div>
+                    </div>
+                    <div className="mt-auto flex flex-wrap gap-3 p-5">
+                      <a
+                        href={reportUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg border border-primary/20 bg-primary/5 px-4 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10"
+                      >
+                        {t("about_report_open")}
+                        <ExternalLink className="h-4 w-4" aria-hidden="true" />
+                      </a>
+                      <a
+                        href={reportUrl}
+                        download
+                        className="inline-flex flex-1 items-center justify-center gap-2 rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+                      >
+                        {t("about_report_download")}
+                        <Download className="h-4 w-4" aria-hidden="true" />
+                      </a>
+                    </div>
+                  </article>
+                </FadeIn>
+              );
+            })}
           </div>
         </section>
 
