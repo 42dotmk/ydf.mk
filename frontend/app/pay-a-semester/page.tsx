@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { SponsorsSection } from "@/components/home/sponsors-section";
+import { SpecialThanksSection } from "@/components/home/special-thanks-section";
+import { NetworksSection } from "@/components/home/network-section";
 
 export default function PayASemesterPage() {
   const { t } = useLocale();
@@ -120,6 +122,8 @@ export default function PayASemesterPage() {
         </div>
       </div>
       <SponsorsSection />
+      <SpecialThanksSection />
+      <NetworksSection />
     </>
   );
 }

@@ -5,6 +5,7 @@ import { OpportunitiesTeaser } from "@/components/home/opportunities-teaser";
 import { SupportTeaser } from "@/components/home/support-teaser";
 import { NewsletterSection } from "@/components/home/newsletter-section";
 import { SponsorsSection } from "@/components/home/sponsors-section";
+import { SpecialThanksSection } from "@/components/home/special-thanks-section";
 import { NetworksSection } from "@/components/home/network-section";
 
 export default function HomePage() {
@@ -16,6 +17,7 @@ export default function HomePage() {
       <OpportunitiesTeaser />
       <SupportTeaser />
       <SponsorsSection />
+      <SpecialThanksSection />
       <NetworksSection />
       <NewsletterSection />
     </>

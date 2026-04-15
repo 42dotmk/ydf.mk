@@ -2,20 +2,24 @@
 
 import { useLocale } from "@/lib/locale-context";
 import { FadeIn } from "@/components/animate";
-import Image from "next/image";
 
 const networks = [
   {
     name: "Anna Lindh Foundation",
     src: "/images/media/anna_lindh_foundation.png",
+    url: "https://www.annalindhfoundation.org",
   },
   {
     name: "Coface Families Europe",
     src: "/images/media/coface-families-europe.png",
+    darkSrc: "/images/media/coface-families-europe-dark.png",
+    url: "https://coface-eu.org",
   },
   {
     name: "Macedonian Anti-Poverty Platform",
     src: "/images/media/MPPS.png",
+    darkSrc: "/images/media/MPPS-dark.png",
+    url: "https://mpps.org.mk/",
   },
 ];
 
@@ -33,15 +37,29 @@ export function NetworksSection() {
         <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {networks.map((network) => (
             <FadeIn key={network.name}>
-              <div className="flex items-center justify-center rounded-lg bg-card p-6 shadow-sm transition-shadow hover:shadow-md">
+              <a
+                href={network.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center rounded-lg bg-card p-6 shadow-sm transition-shadow hover:shadow-md"
+              >
                 <img
                   src={network.src}
                   alt={network.name}
-                  className="h-24 w-auto max-w-full object-contain opacity-80 transition-opacity hover:opacity-100 md:h-28"
+                  className={`h-24 w-auto max-w-full object-contain opacity-80 transition-opacity hover:opacity-100 md:h-28${network.darkSrc ? " dark:hidden" : ""}`}
                   loading="lazy"
                   decoding="async"
                 />
-              </div>
+                {network.darkSrc && (
+                  <img
+                    src={network.darkSrc}
+                    alt={network.name}
+                    className="hidden h-24 w-auto max-w-full object-contain opacity-80 transition-opacity hover:opacity-100 md:h-28 dark:block"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                )}
+              </a>
             </FadeIn>
           ))}
         </div>
