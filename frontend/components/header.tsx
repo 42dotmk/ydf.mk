@@ -35,7 +35,7 @@ const navItems: NavItem[] = [
     labelKey: "nav_for_youth",
     children: [
       { labelKey: "nav_opportunities", href: "/opportunities" },
-      // { labelKey: "nav_blog", href: "/blog" },
+      { labelKey: "nav_blog", href: "/blog" },
       // { labelKey: "nav_events", href: "/events" },
       { labelKey: "nav_news", href: "/news" },
     ],
