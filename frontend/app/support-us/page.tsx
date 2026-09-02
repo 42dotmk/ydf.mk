@@ -78,7 +78,7 @@ export default function SupportUsPage() {
           </h2>
           <div className="grid gap-6 lg:grid-cols-2">
             <a
-              href="https://ecrowd.mk/projects/0a6981a1-4c92-497b-bfaf-a9e137b5b1c8"
+              href="https://ecrowd.mk/organization/6c303324-c693-42eb-9ad1-a39009f78ca5"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-4 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"

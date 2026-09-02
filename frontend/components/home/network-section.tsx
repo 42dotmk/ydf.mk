@@ -21,6 +21,12 @@ const networks = [
     darkSrc: "/images/media/MPPS-dark.png",
     url: "https://mpps.org.mk/",
   },
+  {
+    name: "European Youth Network",
+    src: "/images/media/european-youth.png",
+    url: "https://www.nms.org.mk/",
+  },
+
 ];
 
 export function NetworksSection() {
@@ -34,7 +40,7 @@ export function NetworksSection() {
             {t("networks_member_title")}
           </h2>
         </FadeIn>
-        <div className="mt-12 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid grid-cols-4 gap-8">
           {networks.map((network) => (
             <FadeIn key={network.name}>
               <a
@@ -46,7 +52,10 @@ export function NetworksSection() {
                 <img
                   src={network.src}
                   alt={network.name}
-                  className={`h-24 w-auto max-w-full object-contain opacity-80 transition-opacity hover:opacity-100 md:h-28${network.darkSrc ? " dark:hidden" : ""}`}
+                  // className={`h-24 w-auto max-w-full object-contain opacity-80 transition-opacity hover:opacity-100 md:h-28${network.darkSrc ? " dark:hidden" : ""}`}
+                  className={`h-24 w-auto max-w-full object-contain opacity-80 transition-opacity hover:opacity-100 md:h-28 ${
+                    network.name === "European Youth Network" ? "p-0 scale-125" : ""
+                  }${network.darkSrc ? " dark:hidden" : ""}`}
                   loading="lazy"
                   decoding="async"
                 />

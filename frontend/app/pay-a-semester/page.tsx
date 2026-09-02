@@ -13,7 +13,7 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { SponsorsSection } from "@/components/home/sponsors-section";
-import { SpecialThanksSection } from "@/components/home/special-thanks-section";
+// import { SpecialThanksSection } from "@/components/home/special-thanks-section";
 import { NetworksSection } from "@/components/home/network-section";
 
 export default function PayASemesterPage() {
@@ -43,7 +43,7 @@ export default function PayASemesterPage() {
                 aria-hidden="true"
               />
             </div>
-            <span className="text-4xl font-bold text-primary">111+</span>
+            <span className="text-4xl font-bold text-primary">120+</span>
             <p className="max-w-sm text-sm text-muted-foreground">
               {t("pay_page_impact")}
             </p>
@@ -62,7 +62,7 @@ export default function PayASemesterPage() {
 
             <div className="flex flex-col gap-4">
               <a
-                href="https://ecrowd.mk/projects/0a6981a1-4c92-497b-bfaf-a9e137b5b1c8"
+                href="https://ecrowd.mk/organization/6c303324-c693-42eb-9ad1-a39009f78ca5"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
@@ -122,7 +122,7 @@ export default function PayASemesterPage() {
         </div>
       </div>
       <SponsorsSection />
-      <SpecialThanksSection />
+      {/* <SpecialThanksSection /> */}
       <NetworksSection />
     </>
   );
