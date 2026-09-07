@@ -4,6 +4,13 @@ import { useLocale } from "@/lib/locale-context";
 import { FadeIn } from "@/components/animate";
 
 const sponsors: { name: string; src: string; url: string; darkSrc?: string }[] = [
+  {
+  name: "Base42",
+  src: "/images/sponsors/base42.svg",
+  darkSrc: "/images/sponsors/base42-dark.svg",
+  url: "https://42.mk",
+},
+
   { name: "Doniraj Kompjuter", src: "/images/sponsors/doniraj_kompjuter.jpg", url: "https://donirajkompjuter.mk" },
   { name: "Ecrowd", src: "/images/sponsors/ecrowd.png", url: "https://ecrowd.mk" },
   { name: "Kanal 77", src: "/images/sponsors/kanal77.jpg", url: "https://kanal77.mk" },
@@ -13,14 +20,14 @@ const sponsors: { name: string; src: string; url: string; darkSrc?: string }[] =
     src: "/images/sponsors/komercijalna_banka.png",
     url: "https://kb.com.mk",
   },
-  { name: "Srekja Bar", src: "/images/sponsors/srekja_bar.png", url: "https://srekjabar.mk" },
-  { name: "Startup Club", src: "/images/sponsors/startup_club.jpg", url: "https://startupclub.mk" },
-  { name: "Studentarija", src: "/images/sponsors/studentarija.png", url: "https://studentarija.mk" },
-  { name: "Tikves", src: "/images/sponsors/tikves-logo.png", url: "https://tikves.com.mk" },
+  { name: "Srekja Bar", src: "/images/sponsors/srekja_bar.png", url: "https://www.instagram.com/srekja.bar.food/" },
+  { name: "Startup Club", src: "/images/sponsors/startup_club.jpg", url: "https://www.instagram.com/startupclub_skopje/" },
+  { name: "Studentarija", src: "/images/sponsors/studentarija.png", url: "https://www.instagram.com/studentarijamk/" },
+  { name: "Tikves", src: "/images/sponsors/tikves-logo.png", url: "https://www.instagram.com/tikveswinery/" },
   { name: "USS", src: "/images/sponsors/uss.png", url: "https://www.facebook.com/ussukim/" },
-  { name: "Kombo", src: "/images/sponsors/kombo.jpeg", url: "https://kombo.mk" },
+  { name: "Kombo", src: "/images/sponsors/kombo.jpeg", url: "https://www.instagram.com/kombo.creativestudio/" },
   { name: "Mzmp", src: "/images/sponsors/mzmp.png", url: "https://myla.org.mk/" },
-  { name: "Dijabet", src: "/images/sponsors/dijabet.jpg", url: "https://diabetes.mk/" },
+  { name: "Dijabet", src: "/images/sponsors/dijabet.jpg", url: "https://www.instagram.com/diabetes.macedonia/" },
   { name: "Yes For Less", src: "/images/sponsors/yes_for_less.png", url: "https://www.yesforless.mk/" },
 ];
 

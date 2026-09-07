@@ -142,7 +142,7 @@ export default function AboutPage() {
                   nameKey: "team_elena_name",
                   roleKey: "team_elena_role",
                   image: "/images/team/elena.jpg",
-                  email: "ellena.bozhinovska@gmail.com",
+                  email: "ngo.ydf@gmail.com",
                 },
                 {
                   nameKey: "team_bojana_name",

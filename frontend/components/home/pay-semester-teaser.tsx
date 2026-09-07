@@ -54,7 +54,7 @@ export function PaySemesterTeaser() {
             <div className="flex justify-center" aria-hidden="true">
               <div className="flex h-64 w-64 flex-col items-center justify-center rounded-full border-4 border-primary-foreground/30 bg-primary-foreground/10 backdrop-blur-sm">
                 <CountUp
-                  end={111}
+                  end={120}
                   suffix="+"
                   className="text-5xl font-bold text-primary-foreground"
                 />
