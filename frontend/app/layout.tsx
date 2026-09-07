@@ -8,6 +8,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { SkipLink } from "@/components/skip-link";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Chatbot } from "@/components/chatbot/chatbot";
 
 const _inter = Inter({ subsets: ["latin", "cyrillic"] });
 
@@ -50,6 +51,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <Chatbot />
           </LocaleProvider>
         </ThemeProvider>
       </body>
