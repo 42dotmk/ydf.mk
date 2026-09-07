@@ -100,7 +100,7 @@ export function HeroSection() {
             </div>
             <div className="text-center">
               <CountUp
-                end={111}
+                end={120}
                 suffix="+"
                 className="text-3xl font-bold text-primary lg:text-4xl"
               />
